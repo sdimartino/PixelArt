@@ -19,16 +19,13 @@ var nombreColores = ['White', 'LightYellow',
   'MediumPurple', 'Lavender', 'Gainsboro', 'LightGray', 'Silver', 'DarkGray', 'Gray',
   'DimGray', 'LightSlateGray', 'DarkSlateGray', 'Black'
 ];
-
 // Variable para guardar el elemento 'color-personalizado'
 // Es decir, el que se elige con la rueda de color.
 var colorPersonalizado = document.getElementById('color-personalizado');
-
 var paleta= document.getElementById('paleta');
 var grillaPixeles= document.getElementById('grilla-pixeles');
 var indicadordecolor= document.getElementById('indicador-de-color');
 var mousePresionado=false;
-
 colorPersonalizado.addEventListener('change', 
   (function(e) {
     // Se guarda el color de la rueda en colorActual
@@ -37,7 +34,6 @@ colorPersonalizado.addEventListener('change',
     seleccionaColor(e);
   })
 );
-
 var generarPaletaDeColores= function(){
   for(var i=0; i < nombreColores.length; i++)
   {
@@ -49,7 +45,6 @@ var generarPaletaDeColores= function(){
       paleta.appendChild(divColor);
   }
 }
-
 var generarGrillaDePixeles= function(){
   for(var i=0; i < 1750; i++)
   {
@@ -72,7 +67,6 @@ function pintarEnMovimiento(e){
     pintarGrilla(e);
   }
 }
-
 function seleccionaColor(e){
     if (e.target.id=='color-personalizado'){
       color= e.target.value;
@@ -82,19 +76,27 @@ function seleccionaColor(e){
     }
     indicadordecolor.style.background = color;
 }
-
 function pintarGrilla(e){
   e.target.style.background=indicadordecolor.style.background;
 }
-
 function borrarTodo(){
   $("#grilla-pixeles").children().animate({"backgroundColor":"white"},3000);
 }
-
+$("#batman").click(function(){
+  cargarSuperheroe(batman);
+});
+$("#wonder").click(function(){
+  cargarSuperheroe(wonder);
+});
+$("#flash").click(function(){
+  cargarSuperheroe(flash);
+});
+$("#invisible").click(function(){
+  cargarSuperheroe(invisible);
+});
 var iniciar= function()
 {
   generarGrillaDePixeles();
   generarPaletaDeColores();
 }
-
 iniciar();

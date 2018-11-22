@@ -20,3 +20,4 @@ function cargarSuperheroe(superheroe) {
     $pixeles[i].style.backgroundColor = superheroe[i];
   }
 }
+
