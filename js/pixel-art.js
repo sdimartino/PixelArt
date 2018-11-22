@@ -30,11 +30,11 @@ var indicadordecolor= document.getElementById('indicador-de-color');
 var mousePresionado=false;
 
 colorPersonalizado.addEventListener('change', 
-  (function() {
+  (function(e) {
     // Se guarda el color de la rueda en colorActual
     colorActual = colorPersonalizado.value;
     // Completar para que cambie el indicador-de-color al colorActual
-    seleccionaColor(colorActual);
+    seleccionaColor(e);
   })
 );
 
@@ -42,8 +42,9 @@ var generarPaletaDeColores= function(){
   for(var i=0; i < nombreColores.length; i++)
   {
       var divColor= document.createElement('div');
-      divColor.style.backgroundColor=nombreColores[i];
-      divColor.addEventListener('click',seleccionaColor(divColor.style.backgroundColor));
+      var color=nombreColores[i];
+      divColor.style.backgroundColor=color;
+      divColor.addEventListener('click',seleccionaColor);
       divColor.className="color-paleta";
       paleta.appendChild(divColor);
   }
@@ -72,14 +73,23 @@ function pintarEnMovimiento(e){
   }
 }
 
-function seleccionaColor(color){
-  indicadordecolor.style.background = color;
+function seleccionaColor(e){
+    if (e.target.id=='color-personalizado'){
+      color= e.target.value;
+    }
+    else{
+      color= e.target.style.backgroundColor;
+    }
+    indicadordecolor.style.background = color;
 }
 
 function pintarGrilla(e){
   e.target.style.background=indicadordecolor.style.background;
 }
 
+function borrarTodo(){
+  $("#grilla-pixeles").children().animate({"backgroundColor":"white"},3000);
+}
 
 var iniciar= function()
 {
