@@ -49,6 +49,7 @@ var generarGrillaDePixeles= function(){
   for(var i=0; i < 1750; i++)
   {
     var divPixel= document.createElement('div');
+    divPixel.id =i;
     divPixel.addEventListener('click', pintarGrilla);
     divPixel.addEventListener('mousedown',activarPintadoEnMovimiento);
     divPixel.addEventListener('mouseover', pintarEnMovimiento);
@@ -77,7 +78,15 @@ function seleccionaColor(e){
     indicadordecolor.style.background = color;
 }
 function pintarGrilla(e){
+  var bancha=true;
   e.target.style.background=indicadordecolor.style.background;
+  if (bancha)
+  {
+    var id = e.target.id;
+    id++;
+    id="#"+id;
+    $(id)[0].style.backgroundColor = indicadordecolor.style.background;
+  }
 }
 function borrarTodo(){
   $("#grilla-pixeles").children().animate({"backgroundColor":"white"},3000);
