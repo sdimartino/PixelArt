@@ -83,17 +83,27 @@ function borrarTodo(){
   $("#grilla-pixeles").children().animate({"backgroundColor":"white"},3000);
 }
 $("#batman").click(function(){
+  getjsSuperheroe("batman.js");
   cargarSuperheroe(batman);
 });
 $("#wonder").click(function(){
+  getjsSuperheroe("wonder.js");
   cargarSuperheroe(wonder);
 });
 $("#flash").click(function(){
+  getjsSuperheroe("flash.js");
   cargarSuperheroe(flash);
 });
 $("#invisible").click(function(){
+  getjsSuperheroe("invisible.js");
   cargarSuperheroe(invisible);
 });
+
+function getjsSuperheroe(src){
+    var jsfile= $("<script type='text/javascript' src='js/"+src+"'>");
+    $("head").append(jsfile);
+}
+
 var iniciar= function()
 {
   generarGrillaDePixeles();
