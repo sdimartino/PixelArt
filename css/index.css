@@ -8,7 +8,9 @@ body {
   text-align: center;
   background-color: black;
 }
-
+#divSelect{
+  outline: 1px none white;
+}
 /* Estos divs son los pixeles */
 div {
   background-color: white;
@@ -49,7 +51,7 @@ ul {
 }
 p {
   text-transform: uppercase;
-  font-size: .3em;
+  font-size: .7em;
   text-align: right;
 }
 h1 {
@@ -79,6 +81,11 @@ input[type="color"]::-webkit-color-swatch-wrapper {
 }
 input[type="color"]::-webkit-color-swatch {
 	border: none;
+}
+
+select{
+  width: 40px;
+  height: 30px;
 }
 
 .color-paleta {

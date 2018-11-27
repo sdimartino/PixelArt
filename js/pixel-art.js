@@ -78,18 +78,24 @@ function seleccionaColor(e){
     indicadordecolor.style.background = color;
 }
 function pintarGrilla(e){
-  var bancha=true;
+  var tamañoBrocha = $("#sel1")[0].selectedIndex;
   e.target.style.background=indicadordecolor.style.background;
-  if (bancha)
+  if (tamañoBrocha>0)
   {
     var id = e.target.id;
-    id++;
-    id="#"+id;
-    $(id)[0].style.backgroundColor = indicadordecolor.style.background;
+    for (var i=1;i<= tamañoBrocha; i++)
+    {
+      id=  parseInt(id)+ 1;
+      nid="#"+id;
+      $(nid)[0].style.backgroundColor = indicadordecolor.style.background;
+    }
   }
 }
 function borrarTodo(){
-  $("#grilla-pixeles").children().animate({"backgroundColor":"white"},3000);
+  $("#grilla-pixeles").children().animate({"backgroundColor":"white"},2000);
+}
+function plantilla(){
+  $("#grilla-pixeles").children().css("backgroundColor" , indicadordecolor.style.background) ;
 }
 $("#batman").click(function(){
   getjsSuperheroe("batman.js");
@@ -107,12 +113,10 @@ $("#invisible").click(function(){
   getjsSuperheroe("invisible.js");
   cargarSuperheroe(invisible);
 });
-
 function getjsSuperheroe(src){
     var jsfile= $("<script type='text/javascript' src='js/"+src+"'>");
     $("head").append(jsfile);
 }
-
 var iniciar= function()
 {
   generarGrillaDePixeles();
