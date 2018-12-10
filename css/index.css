@@ -3,7 +3,6 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-
 body {
   text-align: center;
   background-color: black;
@@ -24,7 +23,6 @@ div {
   position: relative;
   vertical-align: sub;
 }
-
 button {
   background: lightgrey;
   border: none;
@@ -60,14 +58,12 @@ h1 {
   margin-top: 10px;
   font-family: 'Press Start 2P';
 }
-
 h3 {
   color: white;
   margin-bottom: 15px;
   margin-top: 10px;
   font-family: 'Press Start 2P';
 }
-
 input[type="color"] {
 	-webkit-appearance: none;
 	border: none;
@@ -82,12 +78,10 @@ input[type="color"]::-webkit-color-swatch-wrapper {
 input[type="color"]::-webkit-color-swatch {
 	border: none;
 }
-
 select{
   width: 40px;
   height: 30px;
 }
-
 .color-paleta {
   display: inline-block;
   height: 15px;
@@ -96,11 +90,9 @@ select{
   margin: 0;
     outline: 1px solid white;
 }
-
 .custom {
   color: white;
 }
-
 .cursor-personalizado {
   cursor: url(../img/cursor.png), auto;
 }
@@ -108,7 +100,6 @@ select{
   margin: 0;
   padding: 0;
 }
-
 main {
   width: 25%;
   padding: 0 25px;
@@ -119,13 +110,11 @@ main {
   height: 495px;
   overflow: hidden;
 }
-
 #container {
   width: 100%;
   margin: 20px auto;
   justify-content: center;
   flex-direction: row-reverse
-
 }
 #container, li, .imgs {
  display: flex;
@@ -143,7 +132,7 @@ img {
   max-width: 100%;
   height: auto;
 }
- .input-color li {
+.input-color li {
    margin: 10px 0;
    justify-content: space-between;
  }
@@ -153,7 +142,6 @@ img {
   border: 1px solid white;
   margin: 0;
   position: relative;
-
 }
 #indicador-de-color:after {
   content: "";
@@ -168,16 +156,13 @@ img {
 #indicador-de-color-mensaje {
   color: white;
 }
-
 #result {
   color: white;
 }
-
 #pallette {
   margin-top: 15px;
   background-color: black;
 }
-
 @media only screen and (max-width: 1060px) {
   main {
     width: 100%;
@@ -187,7 +172,6 @@ img {
     width: 100%;
   }
 }
-
 @media only screen and (max-width: 795px) {
   main {
     width: 100%;
